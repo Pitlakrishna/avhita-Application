@@ -4,12 +4,14 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter
 @Getter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Document( collection="guarantor" )
@@ -28,10 +30,5 @@ public class Gaurantor {
 	public String policy_id ;
 	public String group_id ;
 	public String relationship ;
-	
-
-	public String getGaurantorId() {
-        return gaurantor_id;
-    }
 	
 }

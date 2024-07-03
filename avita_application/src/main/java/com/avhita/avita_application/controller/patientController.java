@@ -12,18 +12,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.avhita.avita_application.model.Patient;
 import com.avhita.avita_application.repository.PatientRepository;
+import com.avhita.avita_application.service.PatientService;
 
 @RestController
 public class patientController {
 	
 	@Autowired
-	private PatientRepository patientRepo ;
+	private PatientService patientService ;
 	
-	 @PostMapping("/create_patient")
-	    public ResponseEntity<?> createPatient(@RequestBody Patient  form) {
+	@PostMapping("/create_patient")
+	    public ResponseEntity<?> createPatient(@RequestBody Patient patient) {
 	        try {
-	            patientRepo.save(form);
-	            return new ResponseEntity<Patient>(form, HttpStatus.OK);
+	        	patientService.savePatient(patient);
+	            return new ResponseEntity<Patient>(patient, HttpStatus.OK);
 	        } catch (Exception e) {
 	            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 	        }
@@ -31,7 +32,7 @@ public class patientController {
 	 
 	 @GetMapping("/all_patients")
 	 public ResponseEntity<?> getAllPatients(){
-			List<Patient> forms = patientRepo.findAll();
+			List<Patient> forms = patientService.findAllPatients();
 			if(forms.size()>0){
 				return new ResponseEntity<List<Patient>>(forms , HttpStatus.OK);
 			}
@@ -42,7 +43,7 @@ public class patientController {
 	 
 		@GetMapping("/patient/{id}")
 		public ResponseEntity<?> getSingleuser( @PathVariable("id") String id){
-			Optional<Patient> patient = patientRepo.findById(id);
+			Optional<Patient> patient = patientService.findByIdPatient(id);
 			if(patient.isPresent()){
 				return new ResponseEntity<>(patient.get() , HttpStatus.OK);
 			}
@@ -50,5 +51,5 @@ public class patientController {
 				return new ResponseEntity<>("User not found with id "+id , HttpStatus.NOT_FOUND);
 			}
 		}
-
+		
 }

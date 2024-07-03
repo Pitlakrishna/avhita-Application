@@ -1,23 +1,10 @@
-package com.avhita.avita_application.model;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
+package com.avhita.avita_application.dto;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.avhita.avita_application.model.*;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
-@Document(collection = "insurance")
-public class Insurance {
-	@Id
+public class InsuranceDTO {
 	private String insurance_id;
-	
-	@DBRef
-	private Gaurantor gaurantor;
-	
+	private Gaurantor gaurantor_id;
 	private String policy_name;
 	private String policy_id;
 	private String groupd_id;
@@ -35,13 +22,13 @@ public class Insurance {
 	private boolean belongs_to_ina;
 	
 	
-	public Gaurantor getGaurantor() {
-		return gaurantor;
-	}
-	public void setGaurantor(Gaurantor gaurantor) {
-		this.gaurantor = gaurantor;
-	}
 	
+	public Gaurantor getGaurantor_id() {
+		return gaurantor_id;
+	}
+	public void setGaurantor_id(Gaurantor gaurantor_id) {
+		this.gaurantor_id = gaurantor_id;
+	}
 	public String getInsurance_id() {
 		return insurance_id;
 	}
@@ -120,6 +107,5 @@ public class Insurance {
 	public void setBelongs_to_ina(boolean belongs_to_ina) {
 		this.belongs_to_ina = belongs_to_ina;
 	}
-	
 	
 }

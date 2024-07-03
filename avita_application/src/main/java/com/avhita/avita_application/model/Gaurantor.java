@@ -31,4 +31,14 @@ public class Gaurantor {
 	public String group_id ;
 	public String relationship ;
 	
+	
+	public String getGaurantor_id() {
+		return gaurantor_id;
+	}
+
+
+	public void setGaurantor_id(String gaurantor_id) {
+		this.gaurantor_id = gaurantor_id;
+	}
+	
 }

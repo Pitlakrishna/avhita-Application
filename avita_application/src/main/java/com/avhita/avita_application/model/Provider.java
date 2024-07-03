@@ -28,27 +28,10 @@ public class Provider{
 	public String clinic_id ;
 	public String user_id ;
 	
-//	@CreatedDate
-//	private LocalDateTime created_at ;
-//	
-//	@LastModifiedDate
-//	private LocalDateTime updated_at ;
-//	
-//	//Getter and Setters
-//	public LocalDateTime getCreated_at(){	
-//		return created_at ;
-//	}
-//	
-//	public void setCreated_at(LocalDateTime created_at  ) {
-//		this.created_at = created_at ;
-//	}
-//	
-//	public LocalDateTime getUpdated_at() {
-//		return updated_at ;
-//	}
-//	
-//	public void setUpdated_at( LocalDateTime updated_at ) {
-//		this.updated_at = updated_at ;
-//	} 
-	
+	public String getProvider_id() {
+		return provider_id;
+	}
+	public void setProvider_id(String provider_id) {
+		this.provider_id = provider_id;
+	}
 }

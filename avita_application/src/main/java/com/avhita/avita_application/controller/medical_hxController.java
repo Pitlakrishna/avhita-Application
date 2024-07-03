@@ -31,7 +31,7 @@ public class medical_hxController {
 		}
 	}
 	
-	@GetMapping("/medic	alHx/{id}")
+	@GetMapping("/medicalHx/{id}")
     public ResponseEntity<?> getMedicalHx(@PathVariable String id) {
         try {
             Medical_hx medicalHx = medicalHxService.getMedicalHxWithPatient(id);

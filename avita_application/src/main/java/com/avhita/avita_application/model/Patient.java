@@ -1,6 +1,7 @@
 package com.avhita.avita_application.model;
 import java.util.Date;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -48,11 +49,28 @@ public class Patient {
 	public boolean disabled ;
 	public String language ;
 	public String emergency_contact ;
-	public String address_id ;
-	public String user_id ;
-	public String updated_by ;
 	
+	@DBRef
+	private Address address;
+	@DBRef
+	public Provider user ;
+	
+	public String updated_by ;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
 	public Date updated_date ;
 	
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+	public Provider getUser(){
+		return user;
+	}
+	public void setUser( Provider user ){
+		this.user = user;
+	}
+
 }

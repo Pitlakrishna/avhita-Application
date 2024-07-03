@@ -24,8 +24,8 @@ public class Medical_hx {
 	public String sensitive_skin;
 	public String prior_cardia_hx ;
 	
-	@DBRef
-    public Patient patient;
+//	@DBRef
+//    public Patient patient;
 
 	public String getPatient_id() {
         return patient_id;
@@ -35,13 +35,13 @@ public class Medical_hx {
         this.patient_id = patient_id;
     }
     
-    public Patient getPatient() {
-    	return patient;
-    }
-    
-    public void setPatient(Patient patient) {
-    	this.patient = patient ;
-    }
+//    public Patient getPatient() {
+//    	return patient;
+//    }
+//    
+//    public void setPatient(Patient patient) {
+//    	this.patient = patient ;
+//    }
 	
 }
 

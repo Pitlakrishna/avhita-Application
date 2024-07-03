@@ -23,19 +23,11 @@ public class Address {
 	public String state ;
 	public String zip_code ;
 	
-	@DBRef
-    public Patient patient;
-
-    @DBRef
-    public Gaurantor guarantor;
-
-//    @DBRef
-//    public Insurance insurance;
-
-    @DBRef
-    public Provider provider;
-
-//    @DBRef
-//    public Facility facility;
+	public String getAddress_id() {
+		return address_id;
+	}
+	public void setAddress_id(String address_id) {
+		this.address_id = address_id;
+	}
 
 }

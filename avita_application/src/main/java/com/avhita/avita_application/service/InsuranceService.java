@@ -1,10 +1,7 @@
 package com.avhita.avita_application.service;
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.avhita.avita_application.dto.InsuranceDTO;
 import com.avhita.avita_application.model.Gaurantor;
 import com.avhita.avita_application.model.Insurance;

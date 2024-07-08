@@ -15,8 +15,11 @@ import lombok.Setter;
 
 public class Medical_hx {
 	@Id
-	public String medical_hx_id ;
+	public String medical_hx_id ;	
+	
+//	@Non
 	public String patient_id ;
+	
 	public String diagnosis ;
 	public String medications ;
 	public String social_hx ;
@@ -24,24 +27,12 @@ public class Medical_hx {
 	public String sensitive_skin;
 	public String prior_cardia_hx ;
 	
-//	@DBRef
-//    public Patient patient;
-
-	public String getPatient_id() {
-        return patient_id;
-    }
-
-    public void setPatient_id(String patient_id) {
-        this.patient_id = patient_id;
-    }
-    
-//    public Patient getPatient() {
-//    	return patient;
-//    }
-//    
-//    public void setPatient(Patient patient) {
-//    	this.patient = patient ;
-//    }
+//	public Patient getPatient() {
+//		return patient;
+//	}
+//	public void setPatient(Patient patient) {
+//		this.patient = patient;
+//	}
 	
 }
 

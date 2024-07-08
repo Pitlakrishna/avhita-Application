@@ -18,8 +18,10 @@ import lombok.Setter;
 @Document( collection="patients" )
 
 public class Patient {
+	
 	@Id
 	public String patient_id ;
+	
 	public String first_name ;
 	public String middle_name ;
 	public String last_name ;
@@ -52,12 +54,20 @@ public class Patient {
 	
 	@DBRef
 	private Address address;
+	
 	@DBRef
 	public Provider user ;
 	
 	public String updated_by ;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
 	public Date updated_date ;
+	
+	public String getPatient_id() {
+		return patient_id;
+	}
+	public void setPatient_id(String patient_id) {
+		this.patient_id = patient_id;
+	}
 	
 	public Address getAddress() {
 		return address;

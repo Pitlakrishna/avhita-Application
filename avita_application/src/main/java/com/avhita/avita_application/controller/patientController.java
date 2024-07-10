@@ -23,7 +23,7 @@ public class patientController {
 	@PostMapping("/create_patient")
 	    public ResponseEntity<?> createPatient(@RequestBody Patient patient) {
 	        try {
-	        	patientService.savePatient(patient);
+	        	patientService.savePatient(patient);	
 	            return new ResponseEntity<Patient>(patient, HttpStatus.OK);
 	        } catch (Exception e) {
 	            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);

@@ -1,5 +1,6 @@
 package com.avhita.avita_application.model;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.AllArgsConstructor;
@@ -15,6 +16,7 @@ import lombok.Setter;
 
 public class Address {
 	@Id
+	@Indexed(unique = true)
 	public String address_id ;
 	public String address_label ;
 	public String address_line1 ;

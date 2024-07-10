@@ -1,5 +1,6 @@
 package com.avhita.avita_application.model;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -13,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Document(collection = "insurance")
 public class Insurance {
 	@Id
+	@Indexed(unique = true)
 	private String insurance_id;
 	
 	@DBRef

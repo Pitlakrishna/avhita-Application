@@ -1,6 +1,7 @@
 package com.avhita.avita_application.model;
 import java.util.Date;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
@@ -18,6 +19,7 @@ import lombok.Setter;
 
 public class Gaurantor {
 	@Id
+	@Indexed(unique = true)
 	public String gaurantor_id ;
 	
 	public String first_name ;

@@ -1,7 +1,11 @@
 package com.avhita.avita_application.model;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.mongodb.lang.NonNull;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,9 +19,10 @@ import lombok.Setter;
 
 public class Medical_hx {
 	@Id
-	public String medical_hx_id ;	
+	@Indexed(unique = true)
+	public String medical_hx_id;
 	
-//	@Non
+	@NonNull
 	public String patient_id ;
 	
 	public String diagnosis ;
@@ -26,13 +31,6 @@ public class Medical_hx {
 	public String pediatric_electrodes ;
 	public String sensitive_skin;
 	public String prior_cardia_hx ;
-	
-//	public Patient getPatient() {
-//		return patient;
-//	}
-//	public void setPatient(Patient patient) {
-//		this.patient = patient;
-//	}
 	
 }
 

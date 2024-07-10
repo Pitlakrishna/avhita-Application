@@ -1,6 +1,7 @@
 package com.avhita.avita_application.model;
 import java.util.Date;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -20,6 +21,7 @@ import lombok.Setter;
 public class Patient {
 	
 	@Id
+	@Indexed(unique = true)
 	public String patient_id ;
 	
 	public String first_name ;

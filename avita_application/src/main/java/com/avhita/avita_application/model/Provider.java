@@ -1,5 +1,6 @@
 package com.avhita.avita_application.model;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,8 +14,11 @@ import lombok.Setter;
 @Document( collection="provider" )
 
 public class Provider{
+	
 	@Id
+	@Indexed(unique = true)
 	public String provider_id ;
+	
 	public String salutation ;
 	public String first_name ;
 	public String middle_name ;

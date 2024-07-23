@@ -1,4 +1,5 @@
 package com.avhita.avita_application.model;
+
 import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -16,73 +17,51 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Document( collection="patients" )
+@Document(collection = "patients")
 
 public class Patient {
-	
+
 	@Id
 	@Indexed(unique = true)
-	public String patient_id ;
-	
-	public String first_name ;
-	public String middle_name ;
-	public String last_name ;
-	
+	private String patient_id;
+
+	private String first_name;
+	private String middle_name;
+	private String last_name;
+
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-	public Date dob ;
-	
-	public String ssn ;
-	public String mrn ;
-	public String primary_phone_num ;
-	public String secondary_phone_num ;
-	public String email_address;
-	
+	private Date dob;
+
+	private String ssn;
+	private String mrn;
+	private String primary_phone_num;
+	private String secondary_phone_num;
+	private String email_address;
+
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-	public Date enroll_start_date ;
-	
+	private Date enroll_start_date;
+
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-	public Date enroll_end_date ;
-	
-	public String enroll_type ;
-	public boolean has_pacemaker ;
-	public boolean has_icd ;
-	public String ordering_physician ;
-	public String reading_physician ;
-	public String referring_physician ;
-	public String status;
-	public boolean disabled ;
-	public String language ;
-	public String emergency_contact ;
-	
+	private Date enroll_end_date;
+
+	private String enroll_type;
+	private boolean has_pacemaker;
+	private boolean has_icd;
+	private String ordering_physician;
+	private String reading_physician;
+	private String referring_physician;
+	private String status;
+	private boolean disabled;
+	private String language;
+	private String emergency_contact;
+
 	@DBRef
 	private Address address;
-	
-	@DBRef
-	public Provider user ;
-	
-	public String updated_by ;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-	public Date updated_date ;
-	
-	public String getPatient_id() {
-		return patient_id;
-	}
-	public void setPatient_id(String patient_id) {
-		this.patient_id = patient_id;
-	}
-	
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-	
-	public Provider getUser(){
-		return user;
-	}
-	public void setUser( Provider user ){
-		this.user = user;
-	}
 
+	@DBRef
+	private Provider user;
+
+	private String updated_by;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+	private Date updated_date;
 }

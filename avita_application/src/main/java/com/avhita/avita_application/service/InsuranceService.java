@@ -1,4 +1,5 @@
 package com.avhita.avita_application.service;
+
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,7 @@ public class InsuranceService {
 	public void save(Insurance insurance) {
 		if (insurance.getGaurantor() != null) {
 			Gaurantor gaurantor = gaurantorRepository.findById(insurance.getGaurantor().getGaurantor_id())
-					.orElseThrow( () -> new RuntimeException("Gaurantor not found") );
+					.orElseThrow(() -> new RuntimeException("Gaurantor not found"));
 			insurance.setGaurantor(gaurantor);
 		}
 		insuranceRepository.save(insurance);
@@ -33,11 +34,11 @@ public class InsuranceService {
 	public InsuranceDTO getInsuranceById(String insuranceId) {
 		Insurance insurance = insuranceRepository.findById(insuranceId)
 				.orElseThrow(() -> new RuntimeException("Insurance not found"));
-		
-		if(insurance.getGaurantor() == null) {
+
+		if (insurance.getGaurantor() == null) {
 			throw new RuntimeException("Gaurantor reference is null in the insurance Object");
 		}
-		
+
 		Gaurantor gaurantor = gaurantorRepository.findById(insurance.getGaurantor().getGaurantor_id())
 				.orElseThrow(() -> new RuntimeException("Gaurantor not found"));
 
